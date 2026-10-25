@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Williams Digital | Websites, SEO & Funnels by Williams Daniel O.</title>
+  <meta name="description" content="Portfolio of Williams Daniel O. (Williams Digital): high-converting websites, local SEO, sales copy and funnels for service businesses and brands." />
+  <meta property="og:title" content="Williams Digital | Portfolio" />
+  <meta property="og:description" content="High-converting websites, local SEO and funnels that turn visitors into paying clients." />
+  <meta property="og:image" content="assets/crone-1.jpg" />
+  <link rel="icon" href="assets/logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0F172A; --navy-2: #131d35; --navy-3: #1c2744;
+      --gold: #C59B27; --gold-2: #e0b84a; --blue: #2563EB;
+      --text: #e8ecf4; --muted: #94a3b8; --line: rgba(197,155,39,.22);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--navy); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    nav { position: sticky; top: 0; z-index: 50; background: rgba(15,23,42,.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .5px; }
+    .brand img { width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--gold); }
+    .brand span b { color: var(--gold); }
+    .nav-links { display: flex; gap: 28px; font-size: 14px; color: var(--muted); }
+    .nav-links a:hover { color: var(--gold-2); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 12px; font-weight: 600; font-size: 15px; transition: .2s; cursor: pointer; border: 1px solid transparent; }
+    .btn-gold { background: var(--gold); color: var(--navy); }
+    .btn-gold:hover { background: var(--gold-2); transform: translateY(-1px); }
+    .btn-ghost { border-color: var(--line); color: var(--text); }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold-2); }
+    .btn-sm { padding: 9px 16px; font-size: 14px; }
+
+    /* Hero */
+    .hero { padding: 96px 0 72px; background: radial-gradient(1000px 500px at 80% -10%, rgba(37,99,235,.18), transparent 60%), radial-gradient(800px 400px at 0% 10%, rgba(197,155,39,.12), transparent 60%); }
+    .eyebrow { display: inline-block; padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; color: var(--gold-2); margin-bottom: 22px; }
+    h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(38px, 6vw, 64px); line-height: 1.1; max-width: 860px; }
+    h1 em { font-style: normal; color: var(--gold); }
+    .lead { margin-top: 22px; font-size: 19px; color: var(--muted); max-width: 680px; }
+    .hero-cta { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 14px; }
+    .stats { margin-top: 64px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .stat { background: var(--navy-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+    .stat b { display: block; font-size: 28px; color: var(--gold); }
+    .stat span { font-size: 13px; color: var(--muted); }
+
+    /* Sections */
+    section { padding: 88px 0; }
+    .sec-head { margin-bottom: 44px; }
+    .sec-head h2 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(30px, 4vw, 42px); }
+    .sec-head p { color: var(--muted); margin-top: 10px; max-width: 640px; }
+
+    /* Projects */
+    .project { display: grid; grid-template-columns: 1.25fr 1fr; gap: 44px; align-items: center; padding: 36px; background: var(--navy-2); border: 1px solid var(--line); border-radius: 24px; margin-bottom: 32px; }
+    .project:nth-child(even) { grid-template-columns: 1fr 1.25fr; }
+    .project:nth-child(even) .gallery { order: 2; }
+    .gallery .main { border-radius: 14px; overflow: hidden; border: 1px solid var(--line); cursor: zoom-in; aspect-ratio: 4/3; }
+    .gallery .main img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .5s; }
+    .gallery .main:hover img { transform: scale(1.03); }
+    .thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+    .thumbs img { border-radius: 10px; aspect-ratio: 4/3; object-fit: cover; object-position: top; border: 2px solid transparent; cursor: pointer; opacity: .65; transition: .2s; }
+    .thumbs img.active, .thumbs img:hover { opacity: 1; border-color: var(--gold); }
+    .tag { font-size: 12px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold-2); }
+    .project h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 30px; margin: 8px 0 6px; line-height: 1.2; }
+    .loc { font-size: 14px; color: var(--muted); margin-bottom: 16px; }
+    .project p.desc { color: #c7cfdd; font-size: 15.5px; }
+    .bullets { list-style: none; margin: 18px 0; display: grid; gap: 8px; font-size: 14.5px; color: #c7cfdd; }
+    .bullets li::before { content: "✦"; color: var(--gold); margin-right: 10px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 24px; }
+    .chip { font-size: 12.5px; padding: 5px 12px; border-radius: 999px; background: rgba(37,99,235,.12); border: 1px solid rgba(37,99,235,.35); color: #bcd0ff; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    /* SEO */
+    .seo { background: var(--navy-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .seo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 28px; }
+    .seo-card { background: var(--navy-3); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+    .seo-card b { font-size: 34px; color: var(--gold); display: block; line-height: 1.1; }
+    .seo-card span { color: var(--muted); font-size: 14px; }
+    .seo-shots { display: grid; grid-template-columns: 2fr 1fr; gap: 18px; }
+    .seo-shots .col { display: grid; gap: 18px; }
+    .seo-shots img { border-radius: 14px; border: 1px solid var(--line); cursor: zoom-in; width: 100%; }
+
+    /* Services */
+    .services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .svc { background: var(--navy-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; transition: .2s; }
+    .svc:hover { border-color: var(--gold); transform: translateY(-3px); }
+    .svc .ico { font-size: 26px; margin-bottom: 14px; }
+    .svc h4 { font-size: 17px; margin-bottom: 8px; }
+    .svc p { font-size: 14px; color: var(--muted); }
+
+    /* Contact */
+    .contact { text-align: center; background: radial-gradient(700px 300px at 50% 0%, rgba(197,155,39,.14), transparent 70%); }
+    .contact h2 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 5vw, 48px); }
+    .contact p { color: var(--muted); margin: 14px auto 32px; max-width: 560px; font-size: 17px; }
+    .contact .hero-cta { justify-content: center; }
+    footer { border-top: 1px solid var(--line); padding: 28px 0; font-size: 13px; color: var(--muted); }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+    /* Lightbox */
+    .lb { position: fixed; inset: 0; background: rgba(5,8,18,.94); display: none; align-items: center; justify-content: center; z-index: 100; padding: 24px; cursor: zoom-out; }
+    .lb.open { display: flex; }
+    .lb img { max-height: 92vh; max-width: 96vw; border-radius: 12px; box-shadow: 0 30px 80px rgba(0,0,0,.6); }
+
+    .wa-float { position: fixed; right: 20px; bottom: 20px; z-index: 60; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: grid; place-items: center; box-shadow: 0 10px 30px rgba(0,0,0,.4); transition: .2s; }
+    .wa-float:hover { transform: scale(1.08); }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .stats, .services { grid-template-columns: repeat(2, 1fr); }
+      .project, .project:nth-child(even) { grid-template-columns: 1fr; padding: 22px; gap: 26px; }
+      .project:nth-child(even) .gallery { order: 0; }
+      .seo-grid { grid-template-columns: 1fr; }
+      .seo-shots { grid-template-columns: 1fr; }
+      .hero { padding: 64px 0 48px; }
+      section { padding: 64px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="wrap">
+      <a href="#" class="brand"><img src="assets/logo.jpg" alt="Williams Digital logo" /><span>WILLIAMS <b>DIGITAL</b></span></a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#seo">SEO Results</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="https://wa.me/16802062385" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Let's Talk</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Williams Daniel O. · Web Designer & SEO Specialist</div>
+      <h1>I build websites that get found on Google and <em>turn visitors into paying clients.</em></h1>
+      <p class="lead">High-converting websites and SEO, persuasive sales copy, and funnels that drive results for service businesses, local brands and e-commerce stores.</p>
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-gold">View My Work ↓</a>
+        <a href="https://wa.me/16802062385" target="_blank" rel="noopener" class="btn btn-ghost">Chat on WhatsApp</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>4+</b><span>Websites launched</span></div>
+        <div class="stat"><b>#1</b><span>Google Map Pack ranking</span></div>
+        <div class="stat"><b>+9,942%</b><span>Organic clicks growth</span></div>
+        <div class="stat"><b>3</b><span>Industries: Trades, Beauty, Fashion</span></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Selected Work</h2>
+        <p>Real websites, designed, built and launched for real businesses. Click any image to enlarge it.</p>
+      </div>
+
+      <div class="projects">
+        <!-- Crone Roofing -->
+        <article class="project">
+          <div class="gallery">
+            <div class="main"><img src="assets/crone-1.jpg" alt="Crone Roofing website homepage" loading="lazy" /></div>
+            <div class="thumbs">
+              <img src="assets/crone-1.jpg" alt="Crone Roofing hero" class="active" loading="lazy" />
+              <img src="assets/crone-2.jpg" alt="Crone Roofing services" loading="lazy" />
+              <img src="assets/crone-3.jpg" alt="Crone Roofing trust section" loading="lazy" />
+            </div>
+          </div>
+          <div>
+            <div class="tag">Website Design · Local SEO</div>
+            <h3>Crone Roofing LLC</h3>
+            <div class="loc">📍 Englewood, Colorado, USA · Roofing & Storm Restoration</div>
+            <p class="desc">A lead-generating website for a BBB A+ rated roofing contractor, built to turn storm-damage searches into phone calls.</p>
+            <ul class="bullets">
+              <li>Hail damage, insurance claims, Class-4 shingles & commercial roofing pages</li>
+              <li>Before/after showcase, 4-step process, 5-star reviews & FAQ</li>
+              <li>Click-to-call everywhere, mobile-first and fast-loading</li>
+            </ul>
+            <div class="chips"><span class="chip">HTML/CSS</span><span class="chip">Responsive</span><span class="chip">Local SEO</span><span class="chip">Schema</span></div>
+            <div class="actions">
+              <a href="https://blaqcobra0-tech.github.io/crone-roofing/" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Visit Live Site ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sharon's Signature -->
+        <article class="project">
+          <div class="gallery">
+            <div class="main"><img src="assets/sharon-1.jpg" alt="Sharon's Signature website homepage" loading="lazy" /></div>
+            <div class="thumbs">
+              <img src="assets/sharon-1.jpg" alt="Sharon's Signature hero" class="active" loading="lazy" />
+              <img src="assets/sharon-2.jpg" alt="Sharon's Signature services" loading="lazy" />
+              <img src="assets/sharon-3.jpg" alt="Sharon's Signature features" loading="lazy" />
+            </div>
+          </div>
+          <div>
+            <div class="tag">Website Design · Local SEO</div>
+            <h3>Sharon's Signature</h3>
+            <div class="loc">📍 Wuye, Abuja, Nigeria · Luxury Nail Salon</div>
+            <p class="desc">An elegant, mobile-first website for a 4.9★ luxury nail salon, with one-tap WhatsApp booking.</p>
+            <ul class="bullets">
+              <li>Service menu: Russian manicure, Hard Gel, BIAB, Gel X & Poly Gel</li>
+              <li>Nail training course section to bring in a second revenue stream</li>
+              <li>On-page local SEO targeting "nail salon in Wuye, Abuja"</li>
+            </ul>
+            <div class="chips"><span class="chip">HTML/CSS</span><span class="chip">WhatsApp Booking</span><span class="chip">Local SEO</span><span class="chip">Mobile-First</span></div>
+            <div class="actions">
+              <a href="https://blaqcobra0-tech.github.io/" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Visit Live Site ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Outlaw Original -->
+        <article class="project">
+          <div class="gallery">
+            <div class="main"><img src="assets/outlaw-1.jpg" alt="OUTLAW ORIGINAL storefront homepage" loading="lazy" /></div>
+            <div class="thumbs">
+              <img src="assets/outlaw-1.jpg" alt="OUTLAW ORIGINAL hero" class="active" loading="lazy" />
+              <img src="assets/outlaw-2.jpg" alt="OUTLAW ORIGINAL shop" loading="lazy" />
+              <img src="assets/outlaw-3.jpg" alt="OUTLAW ORIGINAL features" loading="lazy" />
+            </div>
+          </div>
+          <div>
+            <div class="tag">Full-Stack E-commerce</div>
+            <h3>OUTLAW ORIGINAL</h3>
+            <div class="loc">📍 Nigeria · Streetwear Fashion Brand</div>
+            <p class="desc">A full-stack online store for a streetwear brand's first drop, built with Next.js, React and PostgreSQL, with secure Paystack checkout.</p>
+            <ul class="bullets">
+              <li>Paystack checkout in Naira, verified on the server, with signed webhooks</li>
+              <li>Saved shopping bag, coupon codes, free-delivery threshold & NGN/USD toggle</li>
+              <li>Order tracking, early-access signups & WhatsApp/Instagram contact</li>
+            </ul>
+            <div class="chips"><span class="chip">Next.js</span><span class="chip">React</span><span class="chip">PostgreSQL</span><span class="chip">Paystack</span><span class="chip">Playwright</span></div>
+            <div class="actions" id="outlaw-actions">
+              <!-- Add live link here when deployed -->
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="seo" class="seo">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>SEO Results</h2>
+        <p>A 90-day local SEO campaign for a roofing company in Englewood, CO took it from page 6 to the top 3 on Google. Data from Google Search Console.</p>
+      </div>
+      <div class="seo-grid">
+        <div class="seo-card"><b>#54.8 → #2.4</b><span>Average Google position</span></div>
+        <div class="seo-card"><b>+9,942%</b><span>Organic clicks (14 → 1.42K)</span></div>
+        <div class="seo-card"><b>#1 Map Pack</b><span>Englewood & South Denver</span></div>
+      </div>
+      <div class="seo-shots">
+        <img src="assets/seo-cover.jpg" alt="SEO before vs after case study" loading="lazy" />
+        <div class="col">
+          <img src="assets/seo-before.jpg" alt="Search Console before SEO" loading="lazy" />
+          <img src="assets/seo-after.jpg" alt="Search Console after SEO" loading="lazy" />
+        </div>
+      </div>
+      <div style="margin-top:18px"><img src="assets/seo-sharon.jpg" alt="Sharon's Signature local SEO before and after" loading="lazy" style="border-radius:14px;border:1px solid var(--line);cursor:zoom-in;width:100%" /></div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>What I Do</h2>
+        <p>Everything a business needs to get found online and turn that attention into revenue.</p>
+      </div>
+      <div class="services">
+        <div class="svc"><div class="ico">🖥️</div><h4>High-Converting Websites</h4><p>Fast, mobile-first sites designed around one goal: getting you calls, bookings and sales.</p></div>
+        <div class="svc"><div class="ico">📈</div><h4>SEO & Local SEO</h4><p>Technical SEO, schema, Google Business Profile and service pages that rank on page 1.</p></div>
+        <div class="svc"><div class="ico">✍️</div><h4>Persuasive Sales Copy</h4><p>Words that speak to your customer's problem and move them to take action.</p></div>
+        <div class="svc"><div class="ico">🎯</div><h4>Funnels & E-commerce</h4><p>Landing pages, lead funnels and online stores with secure payment integration.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Ready to grow your business online?</h2>
+      <p>Tell me about your project and I'll show you how to get more customers from your website.</p>
+      <div class="hero-cta" id="contact-cta">
+        <a href="https://wa.me/16802062385" target="_blank" rel="noopener" class="btn btn-gold">💬 Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="yr"></span> Williams Digital · Williams Daniel O.</span>
+      <span>Websites · SEO · Copy · Funnels</span>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/16802062385" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+  </a>
+
+  <div class="lb" id="lb"><img alt="Enlarged screenshot" /></div>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    // Thumbnail switching
+    document.querySelectorAll('.gallery').forEach(g => {
+      const main = g.querySelector('.main img');
+      g.querySelectorAll('.thumbs img').forEach(t => t.addEventListener('click', () => {
+        main.src = t.src;
+        g.querySelectorAll('.thumbs img').forEach(x => x.classList.remove('active'));
+        t.classList.add('active');
+      }));
+    });
+    // Lightbox
+    const lb = document.getElementById('lb'), lbImg = lb.querySelector('img');
+    document.querySelectorAll('.gallery .main img, .seo img').forEach(i => i.addEventListener('click', () => { lbImg.src = i.src; lb.classList.add('open'); }));
+    lb.addEventListener('click', () => lb.classList.remove('open'));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+  </script>
+</body>
+</html>
