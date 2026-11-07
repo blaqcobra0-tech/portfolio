@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://williamsdigital.top/sitemap.xml
